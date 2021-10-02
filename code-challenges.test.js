@@ -113,9 +113,30 @@ describe("noDupes", () => {
 // b) Create the function that makes the test pass.
 
 //function called noDupes that takes two arrays
-const noDupes = (a1, a2) => {
-    //concat array1 and 2 for comparison
-    let combinedArrays = a1.concat(a2);
+// const noDupes = (a1, a2) => {
+//     //concat array1 and 2 for comparison
+//     let combinedArrays = a1.concat(a2);
+//     //array to return with no dupes
+//     let noDupesArray = [];
+
+//     //iterates through the combinedArrays
+//     for(let i = 0; i<combinedArrays.length; i++){
+//         //if the value does not exist in the noDupesArray yet then we should push to the new array otherwise do nothing
+//         //interesting syntax
+//         //condition-----------------------------     execute this if true----------------
+//         !noDupesArray.includes(combinedArrays[i]) && noDupesArray.push(combinedArrays[i]);
+//     } 
+
+//     return noDupesArray
+// }
+//test passes! 
+
+//Almost forgot!! STRETCH: Use the spread operator to pass in a dynamic number of arguments.
+
+//function called noDupes that takes any number of arrays
+const noDupes = (...arr) => {
+    //create empty array to concat with spread operator
+    let combinedArrays = [].concat(...arr);
     //array to return with no dupes
     let noDupesArray = [];
 
@@ -129,4 +150,9 @@ const noDupes = (a1, a2) => {
 
     return noDupesArray
 }
-//test passes! 
+
+//took a couple tries. I actually had issues flattening doing something like the following:
+//let combinedArrays = [];
+//combinedArrays.push(...arr)
+//combinedArrays.flat()
+//realized .flat() returns a new array and needs to be assigned to a variable
