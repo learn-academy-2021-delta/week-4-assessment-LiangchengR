@@ -1,5 +1,5 @@
 # ASSESSMENT 4: Ruby Coding Practical Questions
-# MINASWAN
+# MINASWAN - 'Matz is nice and so we are nice!'
 
 # --------------------1) Create a method that takes in a number and determines if the number is even or odd. Use the test variables provided.
 
@@ -10,7 +10,17 @@ num2 = 42
 num3 = 221
 # Expected output: '221 is odd'
 
+def even_or_odd num
+    if num%2 == 0
+        "#{num} is even"
+    else
+        "#{num} is odd"
+    end
+end
 
+p even_or_odd num1
+p even_or_odd num2
+p even_or_odd num3
 
 # -------------------2) Create a method that takes in a string and removes all the vowels from the string. Use the test variables provided. HINT: Check out this resource: https://ruby-doc.org/core-2.6/String.html#method-i-delete
 
@@ -21,7 +31,13 @@ album2 = 'Sgt Pepper'
 album3 = 'Abbey Road'
 # Expected output: 'bby Rd'
 
+def remove_vowels string
+    string.delete "aeiouAEIOU"
+end
 
+p remove_vowels album1
+p remove_vowels album2
+p remove_vowels album3
 
 # -------------------3) Create a method that takes in a string and checks if the string is a palindrome. A palindrome is the same word spelled forwards or backwards. Use the test variables provided.
 
@@ -31,3 +47,15 @@ is_palindrome2 = 'LEARN'
 # Expected output: 'LEARN is not a palindrome'
 is_palindrome3 = 'Rotator'
 # Expected output: 'Rotator is a palindrome'
+
+def palindrome string
+    if string.downcase == string.downcase.reverse
+        "#{string} is a palindrome"
+    else
+        "#{string} is not a palindrome"
+    end
+end
+
+p palindrome is_palindrome1
+p palindrome is_palindrome2
+p palindrome is_palindrome3
